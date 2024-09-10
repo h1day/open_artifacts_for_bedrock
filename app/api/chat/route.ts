@@ -107,7 +107,7 @@ export async function POST(req: Request) {
     console.log('using bedrock client specified from env')
     // llmModel = bedrock(process.env.MODEL_ID || 'anthropic.claude-3-5-sonnet-20240620-v1:0');
     const bedrockClient = createAmazonBedrock({
-      region: 'us-east-1',
+      region: process.env.AWS_REGION,
       accessKeyId: process.env.AWS_ACCESS_KEY_ID,
       secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
     });
